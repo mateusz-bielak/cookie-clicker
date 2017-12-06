@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CookiePanel from './components/CookiePanel';
+import '../node_modules/normalize.css/normalize.css';
 
 const test = (
   <div>
-    <h1>Hello world!</h1>
+    <CookiePanel />
   </div>
 );
 

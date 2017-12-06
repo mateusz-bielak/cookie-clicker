@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+
+html {
+  font-size: 62.5%
+}
+body {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+}

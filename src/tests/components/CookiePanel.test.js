@@ -3,12 +3,11 @@ import { shallow } from 'enzyme';
 import CookiePanel from '../../components/CookiePanel';
 
 test('should render CookiePanel', () => {
-  const wrapper = shallow(<CookiePanel />);
+  const addCookie = jest.fn();
+  const wrapper = shallow(<CookiePanel
+    cookiesAmount={2500}
+    cookiesPerSecond={10}
+    addCookie={addCookie}
+  />);
   expect(wrapper).toMatchSnapshot();
-});
-
-test('should add cookie', () => {
-  const wrapper = shallow(<CookiePanel />);
-  wrapper.find('button').prop('onClick')();
-  expect(wrapper.state().cookiesAmount).toBe(1);
 });

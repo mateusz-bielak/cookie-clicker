@@ -1,11 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render CookiePanel 1`] = `
-<div>
-  <h1>
+<div
+  className="cookie_panel"
+>
+  <h1
+    className="cookie_panel__header"
+  >
     SkyGate Ticket
   </h1>
-  <div>
+  <div
+    className="cookie_panel__stats"
+  >
     <p>
       0
        cookies
@@ -16,6 +22,7 @@ exports[`should render CookiePanel 1`] = `
     </p>
   </div>
   <button
+    className="cookie_panel__button"
     onClick={[Function]}
   >
     <img

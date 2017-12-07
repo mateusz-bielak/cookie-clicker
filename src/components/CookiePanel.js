@@ -14,13 +14,16 @@ class CookiePanel extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>SkyGate Ticket</h1>
-        <div>
+      <div className="cookie_panel">
+        <h1 className="cookie_panel__header">SkyGate Ticket</h1>
+        <div className="cookie_panel__stats">
           <p>{this.state.cookiesAmount} cookies</p>
           <p>per second: {this.state.cookiesPerSecond}</p>
         </div>
-        <button onClick={this.addCookie}>
+        <button
+          className="cookie_panel__button"
+          onClick={this.addCookie}
+        >
           <img
             src="https://dummyimage.com/256x256/906734/fff.jpg"
             alt="cookie.jpg"

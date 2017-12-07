@@ -1,11 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900");
 
 html {
-  font-size: 62.5%
+  box-sizing: border-box;
+  color: $white;
+  font-size: 62.5%;
 }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: 'Merriweather', Georgia, serif;
   font-size: $m-size;
+  font-weight: bold;
 }
 
 button {

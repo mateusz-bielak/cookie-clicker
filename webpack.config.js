@@ -12,29 +12,37 @@ module.exports = (env) => {
       filename: 'bundle.js',
     },
     module: {
-      rules: [{
-        loader: 'babel-loader',
-        test: /\.js$/,
-        exclude: /(node_modules|public)/,
-      }, {
-        test: /\.s?css$/,
-        use: CSSExtract.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
+      rules: [
+        {
+          loader: 'babel-loader',
+          test: /\.js$/,
+          exclude: /(node_modules|public)/,
+        }, {
+          test: /\.s?css$/,
+          use: CSSExtract.extract({
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: true,
+                },
               },
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                },
               },
-            },
-          ],
-        }),
-      }],
+            ],
+          }),
+        }, {
+          loader: 'file-loader',
+          test: /\.(png|svg|jpg|gif)$/,
+          options: {
+            outputPath: 'img/',
+          },
+        },
+      ],
     },
     plugins: [
       CSSExtract,
@@ -42,7 +50,7 @@ module.exports = (env) => {
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       publicPath: '/public/',
-      historyApiFallback: true
+      historyApiFallback: true,
     },
   };
 };

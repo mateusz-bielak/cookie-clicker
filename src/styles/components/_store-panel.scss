@@ -1,9 +1,25 @@
 .store_panel {
   display: flex;
-  align-items: center;
   flex-direction: column;
   height: 100vh;
   width: 25%;
   background-color: $blue-dark;
   text-align: center;
+}
+
+.store_panel__header {
+  margin: 0;
+  font-size: $xl-size;
+  line-height: 50px;
+}
+
+.store_panel__upgrades {
+  height: 77px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.separator {
+  background-image: url(./../img/panelHorizontal5e1f.png);
+  height: 17px;
+  width: 100%;
 }

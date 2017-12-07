@@ -3,13 +3,17 @@ import React from 'react';
 const StorePanel = () => (
   <div className="store_panel">
     <section>
-      <h1>Store</h1>
+      <h1 className="store_panel__header">Store</h1>
+    </section>
+    <section className="store_panel__upgrades">
+      <div className="separator">
+        <span>Upgrades</span>
+      </div>
     </section>
     <section>
-      <p>Upgrades</p>
-    </section>
-    <section>
-      <p>Buildings</p>
+      <div className="separator">
+        <span>Buildings</span>
+      </div>
     </section>
   </div>
 );

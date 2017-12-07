@@ -1,4 +1,6 @@
 import React from 'react';
+import Building from './Building';
+import buildings from '../settings/buildings';
 
 const StorePanel = () => (
   <div className="store_panel">
@@ -14,6 +16,7 @@ const StorePanel = () => (
       <div className="separator">
         <span>Buildings</span>
       </div>
+      { buildings.map(building => <Building key={building.name} data={building} />) }
     </section>
   </div>
 );

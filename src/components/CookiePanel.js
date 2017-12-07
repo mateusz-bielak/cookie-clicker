@@ -1,37 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class CookiePanel extends React.Component {
-  state = {
-    cookiesAmount: 0,
-    cookiesPerSecond: 0,
-  }
+const CookiePanel = props => (
+  <div className="cookie_panel">
+    <h1 className="cookie_panel__header">SkyGate Ticket</h1>
+    <div className="cookie_panel__stats">
+      <p>{props.cookiesAmount} cookies</p>
+      <p>per second: {props.cookiesPerSecond}</p>
+    </div>
+    <button
+      className="cookie_panel__button"
+      onClick={props.addCookie}
+    >
+      <img
+        src="https://dummyimage.com/256x256/906734/fff.jpg"
+        alt="cookie.jpg"
+      />
+    </button>
+  </div>
+);
 
-  addCookie = () => {
-    this.setState(prevState => ({
-      cookiesAmount: prevState.cookiesAmount + 1,
-    }));
-  }
-
-  render() {
-    return (
-      <div className="cookie_panel">
-        <h1 className="cookie_panel__header">SkyGate Ticket</h1>
-        <div className="cookie_panel__stats">
-          <p>{this.state.cookiesAmount} cookies</p>
-          <p>per second: {this.state.cookiesPerSecond}</p>
-        </div>
-        <button
-          className="cookie_panel__button"
-          onClick={this.addCookie}
-        >
-          <img
-            src="https://dummyimage.com/256x256/906734/fff.jpg"
-            alt="cookie.jpg"
-          />
-        </button>
-      </div>
-    );
-  }
-}
+CookiePanel.propTypes = {
+  cookiesAmount: PropTypes.number.isRequired,
+  cookiesPerSecond: PropTypes.number.isRequired,
+  addCookie: PropTypes.func.isRequired,
+};
 
 export default CookiePanel;

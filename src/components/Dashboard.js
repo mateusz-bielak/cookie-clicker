@@ -8,9 +8,28 @@ class Dashboard extends React.Component {
     cookiesPerSecond: 0,
   }
 
+  componentDidMount = () => {
+    this.addCookiesPerSecond();
+  }
+
   addCookie = () => {
     this.setState(prevState => ({
       cookiesAmount: prevState.cookiesAmount + 1,
+    }));
+  }
+
+  addCookiesPerSecond = () => {
+    setInterval(() => {
+      this.setState(prevState => ({
+        cookiesAmount: prevState.cookiesAmount + prevState.cookiesPerSecond,
+      }));
+    }, 1000);
+  }
+
+  buildingBought = (cost, cookiesPerSecond) => {
+    this.setState(prevState => ({
+      cookiesAmount: prevState.cookiesAmount - cost,
+      cookiesPerSecond: prevState.cookiesPerSecond + cookiesPerSecond,
     }));
   }
 
@@ -22,7 +41,10 @@ class Dashboard extends React.Component {
           cookiesPerSecond={this.state.cookiesPerSecond}
           addCookie={this.addCookie}
         />
-        <StorePanel />
+        <StorePanel
+          cookiesAmount={this.state.cookiesAmount}
+          buildingBought={this.buildingBought}
+        />
       </div>
     );
   }

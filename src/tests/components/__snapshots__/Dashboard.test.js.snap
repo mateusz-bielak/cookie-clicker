@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Dashboard 1`] = `
+<div
+  className="dashboard"
+>
+  <CookiePanel
+    addCookie={[Function]}
+    cookiesAmount={0}
+    cookiesPerSecond={0}
+  />
+  <StorePanel
+    buildingBought={[Function]}
+    cookiesAmount={0}
+  />
+</div>
+`;

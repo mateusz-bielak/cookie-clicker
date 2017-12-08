@@ -13,12 +13,12 @@ exports[`should render CookiePanel 1`] = `
     className="cookie_panel__stats"
   >
     <p>
-      0
+      2500
        cookies
     </p>
     <p>
       per second: 
-      0
+      10.0
     </p>
   </div>
   <button

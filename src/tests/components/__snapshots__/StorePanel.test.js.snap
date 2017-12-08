@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render StorePanel 1`] = `
+<div
+  className="store_panel"
+>
+  <h1
+    className="store_panel__header"
+  >
+    Store
+  </h1>
+  <section
+    className="store_panel__upgrades"
+  >
+    <div
+      className="separator"
+    >
+      <span>
+        Upgrades
+      </span>
+    </div>
+  </section>
+  <section
+    className="store_panel__buildings"
+  >
+    <div
+      className="separator"
+    >
+      <span>
+        Buildings
+      </span>
+    </div>
+    <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
+      data={
+        Object {
+          "description": "Autoclicks once every 10 seconds.",
+          "initialCost": 15,
+          "name": "Cursor",
+          "productionPerSecond": 0.1,
+        }
+      }
+      key="Cursor"
+    />
+    <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
+      data={
+        Object {
+          "description": "A nice grandma to bake more cookies.",
+          "initialCost": 100,
+          "name": "Grandma",
+          "productionPerSecond": 1,
+        }
+      }
+      key="Grandma"
+    />
+    <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
+      data={
+        Object {
+          "description": "Grows cookie plants from cookie seeds.",
+          "initialCost": 1100,
+          "name": "Farm",
+          "productionPerSecond": 8,
+        }
+      }
+      key="Farm"
+    />
+    <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
+      data={
+        Object {
+          "description": "Mines out cookie dough and chocolate chips.",
+          "initialCost": 12000,
+          "name": "Mine",
+          "productionPerSecond": 47,
+        }
+      }
+      key="Mine"
+    />
+    <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
+      data={
+        Object {
+          "description": "Produces large quantities of cookies.",
+          "initialCost": 130000,
+          "name": "Factory",
+          "productionPerSecond": 260,
+        }
+      }
+      key="Factory"
+    />
+  </section>
+</div>
+`;

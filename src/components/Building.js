@@ -15,20 +15,23 @@ class Building extends React.Component {
     }), () => {
       const cookiesPerSecond = this.state.amount * this.state.cookiesPerSecond;
       this.props.buildingBought(this.state.cost, cookiesPerSecond);
+      this.increaseCost();
     });
   }
 
+  increaseCost = () => {
+    this.setState(prevState =>
+      ({ cost: Math.floor(prevState.cost * 1.15) }));
+  }
+
   render() {
-    const {
-      name, initialCost,
-    } = this.props.data;
     return (
       <button className="store_panel__building" onClick={this.buyBuilding}>
         <div>
-          <p className="store_panel__building_name">{name}</p>
+          <p className="store_panel__building_name">{this.props.data.name}</p>
           <p className="store_panel__building_cost">
             <img src="https://dummyimage.com/14x14/906734/fff.png" alt="Cookie.png" />
-            {` ${initialCost}`}
+            {` ${this.state.cost}`}
           </p>
         </div>
         <p className="store_panel__building_amount">{this.state.amount}</p>

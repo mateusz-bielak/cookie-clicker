@@ -26,9 +26,10 @@ class Dashboard extends React.Component {
     }, 1000);
   }
 
-  buildingBought = (cost) => {
+  buildingBought = (cost, cookiesPerSecond) => {
     this.setState(prevState => ({
       cookiesAmount: prevState.cookiesAmount - cost,
+      cookiesPerSecond: prevState.cookiesPerSecond + cookiesPerSecond,
     }));
   }
 

@@ -3,16 +3,36 @@ import { shallow } from 'enzyme';
 import Building from '../../components/Building';
 import buildings from '../../settings/buildings';
 
+let buildingBought;
+let data;
 let wrapper;
 
 beforeEach(() => {
+  buildingBought = jest.fn();
+  [data] = buildings;
   wrapper = shallow(<Building
-    data={buildings[0]}
+    data={data}
     cookiesAmount={25}
-    buildingBought={jest.fn()}
+    buildingBought={buildingBought}
   />);
 });
 
 test('should render Building', () => {
   expect(wrapper).toMatchSnapshot();
+});
+
+test('should buy building', () => {
+  wrapper.find('button').simulate('click');
+  expect(wrapper.state('amount')).toBe(1);
+  expect(buildingBought)
+    .toHaveBeenLastCalledWith(data.initialCost, wrapper.state('cookiesPerSecond'));
+});
+
+test('should not buy building', () => {
+  wrapper.setProps({ cookiesAmount: 0 });
+  wrapper.find('button').simulate('click');
+  expect(wrapper.state('amount')).toBe(0);
+  expect(buildingBought)
+    .not
+    .toHaveBeenCalled();
 });

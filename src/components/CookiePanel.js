@@ -5,8 +5,8 @@ const CookiePanel = props => (
   <div className="cookie_panel">
     <h1 className="cookie_panel__header">SkyGate Ticket</h1>
     <div className="cookie_panel__stats">
-      <p>{props.cookiesAmount} cookies</p>
-      <p>per second: {props.cookiesPerSecond}</p>
+      <p>{props.cookiesAmount.toFixed(0)} cookies</p>
+      <p>per second: {props.cookiesPerSecond.toFixed(1)}</p>
     </div>
     <button
       className="cookie_panel__button"

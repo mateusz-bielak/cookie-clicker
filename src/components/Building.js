@@ -5,14 +5,17 @@ class Building extends React.Component {
   state = {
     amount: 0,
     cost: this.props.data.initialCost,
+    cookiesPerSecond: this.props.data.productionPerSecond,
   }
 
   buyBuilding = () => {
     if (this.props.cookiesAmount < this.state.cost) return;
     this.setState(prevState => ({
       amount: prevState.amount + 1,
-    }));
-    this.props.buildingBought(this.state.cost);
+    }), () => {
+      const cookiesPerSecond = this.state.amount * this.state.cookiesPerSecond;
+      this.props.buildingBought(this.state.cost, cookiesPerSecond);
+    });
   }
 
   render() {

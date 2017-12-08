@@ -18,7 +18,7 @@ exports[`should render CookiePanel 1`] = `
     </p>
     <p>
       per second: 
-      10
+      10.0
     </p>
   </div>
   <button

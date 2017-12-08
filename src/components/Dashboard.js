@@ -9,17 +9,21 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount = () => {
-    setInterval(() => {
-      this.setState(prevState => ({
-        cookiesAmount: prevState.cookiesAmount + prevState.cookiesPerSecond,
-      }));
-    }, 1000);
+    this.addCookiesPerSecond();
   }
 
   addCookie = () => {
     this.setState(prevState => ({
       cookiesAmount: prevState.cookiesAmount + 1,
     }));
+  }
+
+  addCookiesPerSecond = () => {
+    setInterval(() => {
+      this.setState(prevState => ({
+        cookiesAmount: prevState.cookiesAmount + prevState.cookiesPerSecond,
+      }));
+    }, 1000);
   }
 
   buildingBought = (cost) => {

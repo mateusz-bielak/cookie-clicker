@@ -8,6 +8,14 @@ class Dashboard extends React.Component {
     cookiesPerSecond: 0,
   }
 
+  componentDidMount = () => {
+    setInterval(() => {
+      this.setState(prevState => ({
+        cookiesAmount: prevState.cookiesAmount + prevState.cookiesPerSecond,
+      }));
+    }, 1000);
+  }
+
   addCookie = () => {
     this.setState(prevState => ({
       cookiesAmount: prevState.cookiesAmount + 1,

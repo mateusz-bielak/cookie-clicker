@@ -31,6 +31,8 @@ exports[`should render StorePanel 1`] = `
       </span>
     </div>
     <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
       data={
         Object {
           "description": "Autoclicks once every 10 seconds.",
@@ -42,6 +44,8 @@ exports[`should render StorePanel 1`] = `
       key="Cursor"
     />
     <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
       data={
         Object {
           "description": "A nice grandma to bake more cookies.",
@@ -53,6 +57,8 @@ exports[`should render StorePanel 1`] = `
       key="Grandma"
     />
     <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
       data={
         Object {
           "description": "Grows cookie plants from cookie seeds.",
@@ -64,6 +70,8 @@ exports[`should render StorePanel 1`] = `
       key="Farm"
     />
     <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
       data={
         Object {
           "description": "Mines out cookie dough and chocolate chips.",
@@ -75,6 +83,8 @@ exports[`should render StorePanel 1`] = `
       key="Mine"
     />
     <Building
+      buildingBought={[Function]}
+      cookiesAmount={100}
       data={
         Object {
           "description": "Produces large quantities of cookies.",

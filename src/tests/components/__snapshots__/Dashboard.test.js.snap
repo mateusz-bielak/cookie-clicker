@@ -9,6 +9,9 @@ exports[`should render Dashboard 1`] = `
     cookiesAmount={0}
     cookiesPerSecond={0}
   />
-  <StorePanel />
+  <StorePanel
+    buildingBought={[Function]}
+    cookiesAmount={0}
+  />
 </div>
 `;

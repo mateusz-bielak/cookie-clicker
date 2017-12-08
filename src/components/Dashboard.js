@@ -14,6 +14,12 @@ class Dashboard extends React.Component {
     }));
   }
 
+  buildingBought = (cost) => {
+    this.setState(prevState => ({
+      cookiesAmount: prevState.cookiesAmount - cost,
+    }));
+  }
+
   render() {
     return (
       <div className="dashboard">
@@ -22,7 +28,10 @@ class Dashboard extends React.Component {
           cookiesPerSecond={this.state.cookiesPerSecond}
           addCookie={this.addCookie}
         />
-        <StorePanel />
+        <StorePanel
+          cookiesAmount={this.state.cookiesAmount}
+          buildingBought={this.buildingBought}
+        />
       </div>
     );
   }

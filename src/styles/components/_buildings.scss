@@ -1,0 +1,24 @@
+.store_panel__building {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $s-size $xl-size;
+  text-align: start;
+  
+  p {
+    margin: 0;
+  }
+}
+
+.store_panel__building_name {
+  font-size: $xl-size;
+}
+
+.store_panel__building_cost {
+  font-size: $m-size;
+}
+
+.store_panel__building_amount {
+  font-size: $xl-size;
+}

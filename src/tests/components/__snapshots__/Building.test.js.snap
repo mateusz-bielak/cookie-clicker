@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Building 1`] = `
+<button
+  className="store_panel__building"
+>
+  <div>
+    <p
+      className="store_panel__building_name"
+    >
+      Cursor
+    </p>
+    <p
+      className="store_panel__building_cost"
+    >
+      <img
+        alt="Cookie.png"
+        src="https://dummyimage.com/14x14/906734/fff.png"
+      />
+       15
+    </p>
+  </div>
+  <p
+    className="store_panel__building_amount"
+  >
+    0
+  </p>
+</button>
+`;

@@ -4,15 +4,13 @@ import buildings from '../settings/buildings';
 
 const StorePanel = () => (
   <div className="store_panel">
-    <section>
-      <h1 className="store_panel__header">Store</h1>
-    </section>
+    <h1 className="store_panel__header">Store</h1>
     <section className="store_panel__upgrades">
       <div className="separator">
         <span>Upgrades</span>
       </div>
     </section>
-    <section>
+    <section className="store_panel__buildings">
       <div className="separator">
         <span>Buildings</span>
       </div>

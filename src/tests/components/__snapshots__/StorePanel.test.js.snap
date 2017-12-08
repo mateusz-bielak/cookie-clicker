@@ -4,13 +4,11 @@ exports[`should render StorePanel 1`] = `
 <div
   className="store_panel"
 >
-  <section>
-    <h1
-      className="store_panel__header"
-    >
-      Store
-    </h1>
-  </section>
+  <h1
+    className="store_panel__header"
+  >
+    Store
+  </h1>
   <section
     className="store_panel__upgrades"
   >
@@ -22,7 +20,9 @@ exports[`should render StorePanel 1`] = `
       </span>
     </div>
   </section>
-  <section>
+  <section
+    className="store_panel__buildings"
+  >
     <div
       className="separator"
     >

@@ -11,11 +11,16 @@ class Building extends React.Component {
       name, initialCost,
     } = this.props.data;
     return (
-      <div>
-        <p>{name}</p>
-        <p>{initialCost}</p>
-        <p>{this.state.amount}</p>
-      </div>
+      <button className="store_panel__building">
+        <div>
+          <p className="store_panel__building_name">{name}</p>
+          <p className="store_panel__building_cost">
+            <img src="https://dummyimage.com/14x14/906734/fff.png" alt="Cookie.png" />
+            {` ${initialCost}`}
+          </p>
+        </div>
+        <p className="store_panel__building_amount">{this.state.amount}</p>
+      </button>
     );
   }
 }

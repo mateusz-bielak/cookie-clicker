@@ -14,10 +14,16 @@
   width: 70%;
   margin: 0;
   margin-bottom: $s-size;
+  padding: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  border: none;
   border-radius: 15px;
+  color: #ffffff;
+  font-family: 'Merriweather', Georgia, serif;
   font-size: $l-size;
+  font-weight: bold;
   line-height: $xl-size;
+  text-align: center;
 }
 
 .cookie_panel__stats {

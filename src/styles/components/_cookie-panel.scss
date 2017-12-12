@@ -41,12 +41,19 @@
 }
 
 .cookie_panel__button {
+  width: 215px;
+  height: 215px;
+  padding: 0;
   background-color: inherit;
   background-image: url(./../img/perfectCookie.png);
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  padding: 0;
+  background-size: cover;
   border: 0;
+  border-radius: 50%;
   outline: none;
+  transition-duration: 0.1s;
+  animation: cookie-bouncing-back 0.5s forwards;
+
+  &:hover {
+    animation: cookie-bouncing 0.5s forwards;
+  }
 }

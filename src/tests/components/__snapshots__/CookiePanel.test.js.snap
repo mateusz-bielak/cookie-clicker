@@ -4,11 +4,11 @@ exports[`should render CookiePanel 1`] = `
 <div
   className="cookie_panel"
 >
-  <h1
+  <input
     className="cookie_panel__header"
-  >
-    SkyGate Ticket
-  </h1>
+    defaultValue="SkyGate Ticket"
+    type="text"
+  />
   <div
     className="cookie_panel__stats"
   >
@@ -24,11 +24,6 @@ exports[`should render CookiePanel 1`] = `
   <button
     className="cookie_panel__button"
     onClick={[Function]}
-  >
-    <img
-      alt="cookie.jpg"
-      src="https://dummyimage.com/256x256/906734/fff.jpg"
-    />
-  </button>
+  />
 </div>
 `;

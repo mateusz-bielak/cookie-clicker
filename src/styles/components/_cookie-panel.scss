@@ -41,7 +41,11 @@
 }
 
 .cookie_panel__button {
-  max-height: 256px;
+  background-color: inherit;
+  background-image: url(./../img/perfectCookie.png);
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
   padding: 0;
   border: 0;
   outline: none;

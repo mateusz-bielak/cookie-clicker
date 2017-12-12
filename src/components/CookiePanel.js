@@ -15,12 +15,7 @@ const CookiePanel = props => (
     <button
       className="cookie_panel__button"
       onClick={props.addCookie}
-    >
-      <img
-        src="https://dummyimage.com/256x256/906734/fff.jpg"
-        alt="cookie.jpg"
-      />
-    </button>
+    />
   </div>
 );
 

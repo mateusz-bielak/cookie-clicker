@@ -50,10 +50,14 @@
   border: 0;
   border-radius: 50%;
   outline: none;
-  transition-duration: 0.1s;
   animation: cookie-bouncing-back 0.5s forwards;
 
   &:hover {
     animation: cookie-bouncing 0.5s forwards;
+
+    &.cookie_panel__button--bounce {
+      animation: cookie-click-bouncing 0.5s forwards;
+    }
   }
 }
+

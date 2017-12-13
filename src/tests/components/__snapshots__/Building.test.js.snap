@@ -16,7 +16,7 @@ exports[`should render Building 1`] = `
     >
       <img
         alt="Cookie.png"
-        src="https://dummyimage.com/14x14/906734/fff.png"
+        src="./public/test-file-stub"
       />
        15
     </p>

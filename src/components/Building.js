@@ -7,6 +7,19 @@ class Building extends React.Component {
     amount: 0,
     cost: this.props.data.initialCost,
     cookiesPerSecond: this.props.data.productionPerSecond,
+    buttonClass: 'store_panel__building',
+  }
+
+  onMouseDown = () => {
+    this.setState(() => ({
+      buttonClass: 'store_panel__building--clicked',
+    }));
+  }
+
+  onMouseUp = () => {
+    this.setState(() => ({
+      buttonClass: 'store_panel__building',
+    }));
   }
 
   buyBuilding = () => {
@@ -26,7 +39,12 @@ class Building extends React.Component {
 
   render() {
     return (
-      <button className="store_panel__building" onClick={this.buyBuilding}>
+      <button
+        className={this.state.buttonClass}
+        onClick={this.buyBuilding}
+        onMouseDown={this.onMouseDown}
+        onMouseUp={this.onMouseUp}
+      >
         <div>
           <p className="store_panel__building_name">{this.props.data.name}</p>
           <p className="store_panel__building_cost">

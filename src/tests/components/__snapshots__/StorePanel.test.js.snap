@@ -9,22 +9,11 @@ exports[`should render StorePanel 1`] = `
   >
     Store
   </h1>
-  <section
-    className="store_panel__upgrades"
-  >
-    <div
-      className="separator"
-    >
-      <span>
-        Upgrades
-      </span>
-    </div>
-  </section>
-  <section
+  <div
     className="store_panel__buildings"
   >
     <div
-      className="separator"
+      className="store_panel__separator"
     >
       <span>
         Buildings
@@ -95,6 +84,6 @@ exports[`should render StorePanel 1`] = `
       }
       key="Factory"
     />
-  </section>
+  </div>
 </div>
 `;

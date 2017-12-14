@@ -1,0 +1,23 @@
+@keyframes cookie-bouncing {
+  0% { transform: scale(1) }
+  25% { transform: scale(1.20) }
+  50% { transform: scale(1.05) }
+  75% { transform: scale(1.15) }
+  100% { transform: scale(1.10) }
+}
+
+@keyframes cookie-bouncing-back {
+  0% { transform: scale(1.10) }
+  30% { transform: scale(1) }
+  60% { transform: scale(1.05) }
+  100% { transform: scale(1) }
+}
+
+@keyframes cookie-click-bouncing {
+  0% { transform: scale(1.10) }
+  25% { transform: scale(1) }
+  50% { transform: scale(1.15) }
+  75% { transform: scale(1.05) }
+  100% { transform: scale(1.10) }
+}
+

@@ -24,6 +24,7 @@
   font-weight: bold;
   line-height: $xl-size;
   text-align: center;
+  text-shadow: 0px 0px 4px #000;
 }
 
 .cookie_panel__stats {
@@ -41,8 +42,23 @@
 }
 
 .cookie_panel__button {
-  max-height: 256px;
+  width: 215px;
+  height: 215px;
   padding: 0;
+  background-color: inherit;
+  background-image: url(./../img/perfectCookie.png);
+  background-size: cover;
   border: 0;
+  border-radius: 50%;
   outline: none;
+  animation: cookie-bouncing-back 0.5s forwards;
+
+  &:hover {
+    animation: cookie-bouncing 0.5s forwards;
+
+    &.cookie_panel__button--bounce {
+      animation: cookie-click-bouncing 0.5s forwards;
+    }
+  }
 }
+

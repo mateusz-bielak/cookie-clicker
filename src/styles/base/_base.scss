@@ -14,8 +14,13 @@ body {
   font-family: 'Merriweather', Georgia, serif;
   font-size: $m-size;
   font-weight: bold;
+  text-shadow: 0px 0px 4px #000;
 }
 
 button {
+  color: $white;
   cursor: pointer;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: bold;
+  text-shadow: 0px 0px 4px #000;
 }

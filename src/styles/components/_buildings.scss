@@ -13,12 +13,21 @@
 
 .store_panel__building_name {
   font-size: $xl-size;
+  line-height: 28px;
 }
 
 .store_panel__building_cost {
+  display: flex;
   font-size: $m-size;
+
+  img {
+    margin-right: 5px;
+  }
 }
 
 .store_panel__building_amount {
-  font-size: $xl-size;
+  font-size: $xxl-size;
+  opacity: 0.2;
+  color: #000;
+  text-shadow: 0px 0px 8px #fff;
 }

@@ -1,4 +1,19 @@
 .dashboard {
   display: flex;
-  justify-content: space-between;
+}
+
+.dashboard__separator {
+  background-image: url(./../img/panelVertical5e1f.png);
+  height: 100vh;
+  width: 17px;
+}
+
+.dashboard__space {
+  flex-grow: 2;
+  background-color: darkslategray;
+  height: 100vh;
+}
+
+.dashboard__store_container {
+  overflow-y: scroll;
 }

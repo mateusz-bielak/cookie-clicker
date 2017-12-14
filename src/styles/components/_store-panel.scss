@@ -13,11 +13,6 @@
   line-height: 50px;
 }
 
-.store_panel__upgrades {
-  height: 77px;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .store_panel__building {
   height: 64px;
   padding: 0 30px;
@@ -25,7 +20,7 @@
   border: 0;
 }
 
-.separator {
+.store_panel__separator {
   background-image: url(./../img/panelHorizontal5e1f.png);
   height: 17px;
   width: 100%;

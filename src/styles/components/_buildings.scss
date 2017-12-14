@@ -15,6 +15,10 @@
   }
 }
 
+.store_panel__building--hidden {
+  opacity: 0.6;
+}
+
 .store_panel__building--clicked {
   @extend .store_panel__building;
 

@@ -5,18 +5,44 @@ import smallCookie from '../img/perfectCookie-small.png';
 class Building extends React.Component {
   state = {
     amount: 0,
+    buttonClass: 'store_panel__building',
     cost: this.props.data.initialCost,
     cookiesPerSecond: this.props.data.productionPerSecond,
-    buttonClass: 'store_panel__building',
+    isShown: false,
+  }
+
+  componentWillReceiveProps = () => {
+    const hiddenButtonClass = 'store_panel__building store_panel__building--hidden';
+    if (
+      this.props.cookiesAmount < this.state.cost &&
+      hiddenButtonClass !== this.state.buttonClass
+    ) {
+      // console.log('no');
+      this.setState(() => ({
+        buttonClass: hiddenButtonClass,
+        isShown: false,
+      }));
+    } else if (
+      this.props.cookiesAmount >= this.state.cost &&
+      hiddenButtonClass === this.state.buttonClass
+    ) {
+      // console.log('yes');
+      this.setState(() => ({
+        buttonClass: 'store_panel__building',
+        isShown: true,
+      }));
+    }
   }
 
   onMouseDown = () => {
+    if (!this.state.isShown) return;
     this.setState(() => ({
       buttonClass: 'store_panel__building--clicked',
     }));
   }
 
   onMouseUp = () => {
+    if (!this.state.isShown) return;
     this.setState(() => ({
       buttonClass: 'store_panel__building',
     }));

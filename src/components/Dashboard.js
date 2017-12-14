@@ -41,10 +41,15 @@ class Dashboard extends React.Component {
           cookiesPerSecond={this.state.cookiesPerSecond}
           addCookie={this.addCookie}
         />
-        <StorePanel
-          cookiesAmount={this.state.cookiesAmount}
-          buildingBought={this.buildingBought}
-        />
+        <div className="dashboard__separator" />
+        <div className="dashboard__space" />
+        <div className="dashboard__separator" />
+        <div className="dashboard__store_container">
+          <StorePanel
+            cookiesAmount={this.state.cookiesAmount}
+            buildingBought={this.buildingBought}
+          />
+        </div>
       </div>
     );
   }

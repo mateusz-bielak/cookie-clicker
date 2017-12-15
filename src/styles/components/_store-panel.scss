@@ -9,6 +9,7 @@
 
 .store_panel__header {
   margin: 0;
+  background: url(./../img/blackGradientSmallTop.png);
   font-size: $xl-size;
   line-height: 50px;
 }
@@ -21,8 +22,11 @@
 }
 
 .store_panel__separator {
-  background-image: url(./../img/panelHorizontal5e1f.png);
-  height: 17px;
+  background:
+    url(./../img/panelGradientLeft.png) no-repeat left,
+    url(./../img/panelGradientRight.png) no-repeat right,
+    url(./../img/panelHorizontal5e1f.png);
+  height: 16px;
   width: 100%;
 }
 

@@ -9,13 +9,9 @@
 
 .store_panel__header {
   margin: 0;
+  background: url(./../img/blackGradientSmallTop.png);
   font-size: $xl-size;
   line-height: 50px;
-}
-
-.store_panel__upgrades {
-  height: 77px;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .store_panel__building {
@@ -25,8 +21,23 @@
   border: 0;
 }
 
-.separator {
-  background-image: url(./../img/panelHorizontal5e1f.png);
-  height: 17px;
+.store_panel__separator {
+  background:
+    url(./../img/panelGradientLeft.png) no-repeat left,
+    url(./../img/panelGradientRight.png) no-repeat right,
+    url(./../img/panelHorizontal5e1f.png);
+  height: 16px;
   width: 100%;
+}
+
+.store_panel__building:nth-of-type(4n + 2) {
+  background-position-y: 64px;
+}
+
+.store_panel__building:nth-of-type(4n + 3) {
+  background-position-y: 128px;
+}
+
+.store_panel__building:nth-of-type(4n + 4) {
+  background-position-y: 192px;
 }

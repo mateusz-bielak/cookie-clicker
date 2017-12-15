@@ -4,6 +4,8 @@ exports[`should render Building 1`] = `
 <button
   className="store_panel__building"
   onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
 >
   <div>
     <p

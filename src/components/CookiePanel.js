@@ -16,7 +16,7 @@ class CookiePanel extends React.Component {
           defaultValue="SkyGate Ticket"
         />
         <div className="cookie_panel__stats">
-          <p>{this.props.cookiesAmount.toFixed(0)} cookies</p>
+          <p>{Math.floor(this.props.cookiesAmount)} cookies</p>
           <p>per second: {this.props.cookiesPerSecond.toFixed(1)}</p>
         </div>
         <button

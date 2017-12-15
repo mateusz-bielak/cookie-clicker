@@ -3,13 +3,17 @@
 }
 
 .dashboard__separator {
-  background-image: url(./../img/panelVertical5e1f.png);
+  background:  
+    url(./../img/panelGradientTop.png) no-repeat top,
+    url(./../img/panelGradientBottom.png) no-repeat bottom,
+    url(./../img/panelVertical5e1f.png);
   height: 100vh;
-  width: 17px;
+  width: 16px;
 }
 
 .dashboard__space {
   flex-grow: 2;
+  background: url(./../img/blackGradientSmallTop.png) repeat-x;
   background-color: darkslategray;
   height: 100vh;
 }

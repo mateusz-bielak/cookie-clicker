@@ -1,9 +1,9 @@
-import { getFromDatabase, updateDatabase } from './methods';
+import { updateDatabase } from './methods';
 
 let database;
-const databaseName = 'cookie-game-database';
-const databaseVersion = 1;
-const databaseStoreName = 'user-data';
+export const databaseName = 'cookie-game-database';
+export const databaseVersion = 1;
+export const databaseStoreName = 'user-data';
 
 // indexedDB.deleteDatabase(databaseName);
 
@@ -26,5 +26,3 @@ setInterval(() => {
 
   updateDatabase(database, 'cookiesAmount', cookiesAmount);
 }, 30000);
-
-export default databaseStoreName;

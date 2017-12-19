@@ -1,4 +1,4 @@
-import databaseStoreName from './setup';
+import { databaseStoreName } from './setup';
 
 export const getFromDatabase = (database, key) => {
   const transaction = database

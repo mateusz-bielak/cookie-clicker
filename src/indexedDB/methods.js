@@ -6,9 +6,7 @@ export const getFromDatabase = (database, key) => {
   const store = transaction.objectStore(databaseStoreName);
   const request = store.get(key);
 
-  request.onsuccess = (event) => {
-    console.log(event.target.result);
-  };
+  return request;
 };
 
 export const updateDatabase = (database, key, value) => {

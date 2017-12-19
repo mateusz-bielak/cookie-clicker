@@ -24,5 +24,25 @@ setInterval(() => {
     .textContent
     .split(' ')[0];
 
+  const buildingsAmount = [].slice.call(document
+    .querySelectorAll('.store_panel__building'));
+
+  const buildingData = buildingsAmount.map((building) => {
+    const buildingName = building
+      .querySelector('.store_panel__building_name')
+      .textContent;
+
+    const buildingAmount = building
+      .querySelector('.store_panel__building_amount')
+      .textContent;
+
+    return { buildingName, buildingAmount };
+  });
+
+  buildingData.forEach((building) => {
+    const { buildingName, buildingAmount } = building;
+    updateDatabase(database, buildingName, buildingAmount);
+  });
+
   updateDatabase(database, 'cookiesAmount', cookiesAmount);
-}, 30000);
+}, 3000);

@@ -1,14 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import smallCookie from '../img/perfectCookie-small.png';
+import { getFromDatabase } from '../indexedDB/methods';
+import { databaseName, databaseVersion } from '../indexedDB/setup';
 
 class Building extends React.Component {
-  state = {
-    amount: 0,
-    buttonClass: 'store_panel__building',
-    cost: this.props.data.initialCost,
-    cookiesPerSecond: this.props.data.productionPerSecond,
-    isShown: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      amount: 0,
+      buttonClass: 'store_panel__building',
+      cost: this.props.data.initialCost,
+      cookiesPerSecond: this.props.data.productionPerSecond,
+      isShown: false,
+    };
+    const openDatabase = indexedDB.open(databaseName, databaseVersion);
+    openDatabase.onsuccess = (event) => {
+      const database = event.target.result;
+      const request = getFromDatabase(database, props.data.name);
+
+      request.onsuccess = (amount) => {
+        this.setState(() => ({
+          amount: Number(amount.target.result) || 0,
+        }));
+      };
+    };
   }
 
   componentWillReceiveProps = () => {

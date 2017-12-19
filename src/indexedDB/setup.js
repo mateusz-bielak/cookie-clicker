@@ -45,4 +45,4 @@ setInterval(() => {
   });
 
   updateDatabase(database, 'cookiesAmount', cookiesAmount);
-}, 3000);
+}, 30000);

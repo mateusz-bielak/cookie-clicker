@@ -24,6 +24,11 @@ setInterval(() => {
     .textContent
     .split(' ')[0];
 
+  const cookiesPerSecond = document
+    .querySelectorAll('.cookie_panel__stats>p')[1]
+    .textContent
+    .split(' ')[2];
+
   const buildingsAmount = [].slice.call(document
     .querySelectorAll('.store_panel__building'));
 
@@ -44,5 +49,5 @@ setInterval(() => {
     updateDatabase(database, buildingName, buildingAmount);
   });
 
-  updateDatabase(database, 'cookiesAmount', cookiesAmount);
+  updateDatabase(database, 'cookies', [cookiesAmount, cookiesPerSecond]);
 }, 30000);

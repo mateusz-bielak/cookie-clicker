@@ -14,11 +14,12 @@ class Dashboard extends React.Component {
     const openDatabase = indexedDB.open(databaseName, databaseVersion);
     openDatabase.onsuccess = (event) => {
       const database = event.target.result;
-      const request = getFromDatabase(database, 'cookiesAmount');
+      const request = getFromDatabase(database, 'cookies');
 
-      request.onsuccess = (cookiesAmount) => {
+      request.onsuccess = (cookies) => {
         this.setState(() => ({
-          cookiesAmount: Number(cookiesAmount.target.result) || 0,
+          cookiesAmount: cookies.target.result ? Number(cookies.target.result[0]) : 0,
+          cookiesPerSecond: cookies.target.result ? Number(cookies.target.result[1]) : 0,
         }));
       };
     };

@@ -1,11 +1,27 @@
 import React from 'react';
 import CookiePanel from './CookiePanel';
 import StorePanel from './StorePanel';
+import { getFromDatabase } from '../indexedDB/methods';
+import { databaseName, databaseVersion } from '../indexedDB/setup';
 
 class Dashboard extends React.Component {
-  state = {
-    cookiesAmount: 0,
-    cookiesPerSecond: 0,
+  constructor(props) {
+    super(props);
+    this.state = {
+      cookiesAmount: 0,
+      cookiesPerSecond: 0,
+    };
+    const openDatabase = indexedDB.open(databaseName, databaseVersion);
+    openDatabase.onsuccess = (event) => {
+      const database = event.target.result;
+      const request = getFromDatabase(database, 'cookiesAmount');
+
+      request.onsuccess = (cookiesAmount) => {
+        this.setState(() => ({
+          cookiesAmount: Number(cookiesAmount.target.result) || 0,
+        }));
+      };
+    };
   }
 
   componentDidMount = () => {

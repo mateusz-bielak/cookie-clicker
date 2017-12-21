@@ -42,21 +42,3 @@
 .store_panel__building:nth-of-type(4n + 4) {
   background-position-y: 192px;
 }
-
-.store_panel__building_info {
-  position: absolute;
-  top: 62px;
-  right: 320px;
-  height: 133px;
-  width: 366px;
-  padding: 4px 8px;
-  margin: 4px;
-  background:
-    url(./../img/shadedBordersSoft.png),
-    url(./../img/darkNoise.jpg);
-  background-size: 100% 100%, auto;
-  border: 3px solid transparent;
-  border-image: url(./../img/frameBorder.png) 3 round;
-  border-radius: 2px;
-  box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.5);
-}

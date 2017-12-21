@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Building from './Building';
+import BuildingInfo from './BuildingInfo';
 import buildings from '../settings/buildings';
 
 const StorePanel = props => (
@@ -17,7 +18,7 @@ const StorePanel = props => (
         buildingBought={props.buildingBought}
       />)) }
     </div>
-    <div className="store_panel__building_info" />
+    <BuildingInfo />
   </div>
 );
 

@@ -17,6 +17,7 @@ const StorePanel = props => (
         buildingBought={props.buildingBought}
       />)) }
     </div>
+    <div className="store_panel__building_info" />
   </div>
 );
 

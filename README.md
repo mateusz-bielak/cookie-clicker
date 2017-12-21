@@ -9,6 +9,8 @@ http://orteil.dashnet.org/cookieclicker - click to see original game.
 Run application in your browser:
 ```
 npm run dev-server
+npm test - for start tests
+npm test -- --watch - for start tests in watch mode
 ```
 
 You can also prepare development and production build in the public folder:

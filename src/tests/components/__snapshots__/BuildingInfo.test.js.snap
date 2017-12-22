@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BuildingInfo 1`] = `
+<div
+  className="building_info"
+>
+  <div
+    className="building_info__header"
+  >
+    <div
+      className="building_info__name"
+    >
+      <p>
+        Cursor
+      </p>
+      <p>
+        [owned: 
+        12
+        ]
+      </p>
+    </div>
+    <p
+      className="building_info__cost"
+    >
+      <img
+        alt="Cookie.png"
+        src="./public/test-file-stub"
+      />
+      15
+    </p>
+  </div>
+  <p
+    className="building_info__description"
+  >
+    Autoclicks once every 10 seconds.
+  </p>
+  <ul
+    className="building_info__stats"
+  >
+    <li>
+      • each farm produces 
+      0.1
+       cookies per second
+    </li>
+    <li>
+      • 
+      12
+       cursors producing 
+      1.2
+        cookies per second
+    </li>
+  </ul>
+</div>
+`;

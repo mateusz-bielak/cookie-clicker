@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Building from '../../components/Building';
 import buildings from '../../settings/buildings';
+import stats from '../fixtures/producentStats';
 
 let buildingBought;
 let data;
@@ -47,14 +48,5 @@ test('should send producent stats', () => {
   wrapper.setProps({ cookiesAmount: 10 });
   wrapper.find('button').simulate('mouseEnter');
 
-  const stats = {
-    amount: 12,
-    cost: 15,
-    description: 'Autoclicks once every 10 seconds.',
-    name: 'Cursor',
-    productionPerSecond: 0.1,
-  };
-
-  expect(getInfoPanel)
-    .toHaveBeenLastCalledWith(stats);
+  expect(getInfoPanel).toHaveBeenLastCalledWith(stats);
 });

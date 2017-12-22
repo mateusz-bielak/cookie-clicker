@@ -19,9 +19,13 @@ class Building extends React.Component {
       const database = event.target.result;
       const request = getFromDatabase(database, props.data.name);
 
-      request.onsuccess = (amount) => {
+      request.onsuccess = (data) => {
+        if (!data.target.result) return;
+        const amount = Number(data.target.result.buildingAmount);
+        const cost = Number(data.target.result.buildingCost);
         this.setState(() => ({
-          amount: Number(amount.target.result) || 0,
+          amount,
+          cost,
         }));
       };
     };

@@ -64,6 +64,22 @@ class Building extends React.Component {
     }));
   }
 
+  getInfoPanel = () => {
+    const {
+      name, description, productionPerSecond,
+    } = this.props.data;
+
+    const stats = {
+      name,
+      amount: this.state.amount,
+      cost: this.state.cost,
+      description,
+      productionPerSecond,
+    };
+
+    this.props.getInfoPanel(stats);
+  }
+
   buyBuilding = () => {
     if (this.props.cookiesAmount < this.state.cost) return;
     this.setState(prevState => ({
@@ -86,6 +102,7 @@ class Building extends React.Component {
         onClick={this.buyBuilding}
         onMouseDown={this.onMouseDown}
         onMouseUp={this.onMouseUp}
+        onMouseEnter={this.getInfoPanel}
       >
         <div>
           <p className="store_panel__building_name">{this.props.data.name}</p>
@@ -107,6 +124,7 @@ Building.propTypes = {
   ])).isRequired,
   cookiesAmount: PropTypes.number.isRequired,
   buildingBought: PropTypes.func.isRequired,
+  getInfoPanel: PropTypes.func.isRequired,
 };
 
 export default Building;

@@ -30,6 +30,7 @@ exports[`should render StorePanel 1`] = `
           "productionPerSecond": 0.1,
         }
       }
+      getInfoPanel={[Function]}
       key="Cursor"
     />
     <Building
@@ -43,6 +44,7 @@ exports[`should render StorePanel 1`] = `
           "productionPerSecond": 1,
         }
       }
+      getInfoPanel={[Function]}
       key="Grandma"
     />
     <Building
@@ -56,6 +58,7 @@ exports[`should render StorePanel 1`] = `
           "productionPerSecond": 8,
         }
       }
+      getInfoPanel={[Function]}
       key="Farm"
     />
     <Building
@@ -69,6 +72,7 @@ exports[`should render StorePanel 1`] = `
           "productionPerSecond": 47,
         }
       }
+      getInfoPanel={[Function]}
       key="Mine"
     />
     <Building
@@ -82,9 +86,12 @@ exports[`should render StorePanel 1`] = `
           "productionPerSecond": 260,
         }
       }
+      getInfoPanel={[Function]}
       key="Factory"
     />
   </div>
-  <BuildingInfo />
+  <BuildingInfo
+    producentInfo={Object {}}
+  />
 </div>
 `;

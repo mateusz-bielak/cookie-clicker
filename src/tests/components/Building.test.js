@@ -5,15 +5,18 @@ import buildings from '../../settings/buildings';
 
 let buildingBought;
 let data;
+let getInfoPanel;
 let wrapper;
 
 beforeEach(() => {
   buildingBought = jest.fn();
+  getInfoPanel = jest.fn();
   [data] = buildings;
   wrapper = shallow(<Building
     data={data}
     cookiesAmount={25}
     buildingBought={buildingBought}
+    getInfoPanel={getInfoPanel}
   />);
 });
 
@@ -37,4 +40,21 @@ test('should not buy building', () => {
   expect(buildingBought)
     .not
     .toHaveBeenCalled();
+});
+
+test('should send producent stats', () => {
+  wrapper.setState({ amount: 12 });
+  wrapper.setProps({ cookiesAmount: 10 });
+  wrapper.find('button').simulate('mouseEnter');
+
+  const stats = {
+    amount: 12,
+    cost: 15,
+    description: 'Autoclicks once every 10 seconds.',
+    name: 'Cursor',
+    productionPerSecond: 0.1,
+  };
+
+  expect(getInfoPanel)
+    .toHaveBeenLastCalledWith(stats);
 });

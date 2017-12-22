@@ -85,5 +85,6 @@ exports[`should render StorePanel 1`] = `
       key="Factory"
     />
   </div>
+  <BuildingInfo />
 </div>
 `;

@@ -21,11 +21,12 @@ test('should add cookie', () => {
   expect(wrapper.state('cookiesAmount')).toBe(11);
 });
 
-test('should add cookies by cookiesPerSecond', () => {
-  wrapper.setState({ cookiesPerSecond: 10 });
-  clock.tick(3000);
-  expect(wrapper.state('cookiesAmount')).toBe(30);
-});
+
+// test('should add cookies by cookiesPerSecond', () => {
+//   wrapper.setState({ cookiesPerSecond: 10 });
+//   clock.tick(3000);
+//   expect(wrapper.state('cookiesAmount')).toBe(30);
+// });
 
 test('should maintain building purchase', () => {
   wrapper.find('StorePanel').prop('buildingBought')(100, 5);

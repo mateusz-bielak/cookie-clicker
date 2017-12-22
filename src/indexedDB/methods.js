@@ -2,7 +2,7 @@ import { databaseStoreName } from './setup';
 
 export const getFromDatabase = (database, key) => {
   const transaction = database
-    .transaction(databaseStoreName);
+    .transaction(databaseStoreName, 'readwrite');
   const store = transaction.objectStore(databaseStoreName);
   const request = store.get(key);
 

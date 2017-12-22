@@ -4,6 +4,7 @@ const stats = {
   description: 'Autoclicks once every 10 seconds.',
   name: 'Cursor',
   productionPerSecond: 0.1,
+  areEnoughCookies: false,
 };
 
 export default stats;

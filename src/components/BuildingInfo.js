@@ -9,7 +9,7 @@ const BuildingInfo = props => (
         <p>{props.producentInfo.name}</p>
         <p>[owned: {props.producentInfo.amount}]</p>
       </div>
-      <p className="building_info__cost">
+      <p className={props.producentInfo.areEnoughCookies ? 'building_info__cost' : 'building_info__cost--too_expensive'}>
         <img src={`./public/${smallCookie}`} alt="Cookie.png" />
         {props.producentInfo.cost}
       </p>

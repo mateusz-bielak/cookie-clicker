@@ -20,7 +20,7 @@ exports[`should render BuildingInfo 1`] = `
       </p>
     </div>
     <p
-      className="building_info__cost"
+      className="building_info__cost--too_expensive"
     >
       <img
         alt="Cookie.png"

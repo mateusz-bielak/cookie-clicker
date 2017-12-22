@@ -53,6 +53,11 @@
   }
 }
 
+.building_info__cost--too_expensive {
+  @extend .building_info__cost;
+  color: #f66;
+}
+
 .building_info__description {
   font-size: $s-size;
   text-align: left;

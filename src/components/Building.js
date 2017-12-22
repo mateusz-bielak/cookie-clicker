@@ -75,6 +75,7 @@ class Building extends React.Component {
       cost: this.state.cost,
       description,
       productionPerSecond,
+      areEnoughCookies: this.state.isShown,
     };
 
     this.props.getInfoPanel(stats);

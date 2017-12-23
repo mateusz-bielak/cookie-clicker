@@ -78,6 +78,7 @@ class Building extends React.Component {
       description,
       productionPerSecond,
       areEnoughCookies: this.state.isShown,
+      onHover: true,
     };
 
     this.props.getInfoPanel(stats);

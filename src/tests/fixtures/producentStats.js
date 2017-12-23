@@ -5,6 +5,7 @@ const stats = {
   name: 'Cursor',
   productionPerSecond: 0.1,
   areEnoughCookies: false,
+  onHover: true,
 };
 
 export default stats;

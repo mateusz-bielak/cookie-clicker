@@ -15,11 +15,17 @@ class StorePanel extends React.Component {
     }));
   }
 
+  hideInfoPanel = () => {
+    const producentInfo = { ...this.state.producentInfo };
+    producentInfo.onHover = false;
+    this.setState({ producentInfo });
+  }
+
   render() {
     return (
       <div className="store_panel">
         <h1 className="store_panel__header">Store</h1>
-        <div className="store_panel__buildings">
+        <div className="store_panel__buildings" onMouseLeave={this.getInfoPanel}>
           <div className="store_panel__separator">
             <span>Buildings</span>
           </div>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import smallCookie from '../img/perfectCookie-small.png';
 
 const BuildingInfo = props => (
-  <div className="building_info">
+  <div className={props.producentInfo.onHover ? 'building_info' : 'building_info--hidden'}>
     <div className="building_info__header">
       <div className="building_info__name">
         <p>{props.producentInfo.name}</p>

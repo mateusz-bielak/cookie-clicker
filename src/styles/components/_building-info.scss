@@ -19,6 +19,10 @@
   text-shadow: 0px 1px 1px #000;
 }
 
+.building_info--hidden {
+  display: none;
+}
+
 .building_info__header {
   display: flex;
   justify-content: space-between;

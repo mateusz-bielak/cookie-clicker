@@ -5,8 +5,6 @@ export const databaseName = 'cookie-game-database';
 export const databaseVersion = 1;
 export const databaseStoreName = 'user-data';
 
-indexedDB.deleteDatabase(databaseName);
-
 const openDatabase = indexedDB.open(databaseName, databaseVersion);
 
 openDatabase.onupgradeneeded = () => {

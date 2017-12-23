@@ -1,7 +1,14 @@
 .cookie_panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
   width: 30%;
   padding-top: 60px;
@@ -52,14 +59,16 @@
   border: 0;
   border-radius: 50%;
   outline: none;
-  animation: cookie-bouncing-back 0.5s forwards;
+  -webkit-animation: cookie-bouncing-back 0.5s forwards;
+          animation: cookie-bouncing-back 0.5s forwards;
 
   &:hover {
-    animation: cookie-bouncing 0.5s forwards;
+    -webkit-animation: cookie-bouncing 0.5s forwards;
+            animation: cookie-bouncing 0.5s forwards;
 
     &.cookie_panel__button--bounce {
-      animation: cookie-click-bouncing 0.5s forwards;
+      -webkit-animation: cookie-click-bouncing 0.5s forwards;
+              animation: cookie-click-bouncing 0.5s forwards;
     }
   }
 }
-

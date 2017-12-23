@@ -92,7 +92,7 @@ exports[`should render StorePanel 1`] = `
     />
   </div>
   <BuildingInfo
-    producentInfo={Object {}}
+    buildingInfo={Object {}}
   />
 </div>
 `;

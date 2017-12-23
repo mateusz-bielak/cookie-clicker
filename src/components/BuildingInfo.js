@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import smallCookie from '../img/perfectCookie-small.png';
 
 const BuildingInfo = props => (
-  <div className={props.producentInfo.onHover ? 'building_info' : 'building_info--hidden'}>
+  <div className={props.buildingInfo.onHover ? 'building_info' : 'building_info--hidden'}>
     <div className="building_info__header">
       <div className="building_info__name">
-        <p>{props.producentInfo.name}</p>
-        <p>[owned: {props.producentInfo.amount}]</p>
+        <p>{props.buildingInfo.name}</p>
+        <p>[owned: {props.buildingInfo.amount}]</p>
       </div>
-      <p className={props.producentInfo.areEnoughCookies ? 'building_info__cost' : 'building_info__cost--too_expensive'}>
+      <p className={props.buildingInfo.areEnoughCookies ? 'building_info__cost' : 'building_info__cost--too_expensive'}>
         <img src={`./public/${smallCookie}`} alt="Cookie.png" />
-        {props.producentInfo.cost}
+        {props.buildingInfo.cost}
       </p>
     </div>
-    <p className="building_info__description">{props.producentInfo.description}</p>
+    <p className="building_info__description">{props.buildingInfo.description}</p>
     <ul className="building_info__stats">
-      <li>• each farm produces {props.producentInfo.productionPerSecond} cookies per second</li>
-      <li>• {props.producentInfo.amount} cursors producing&nbsp;
-        {(props.producentInfo.amount * props.producentInfo.productionPerSecond).toFixed(1)}&nbsp;
+      <li>• each farm produces {props.buildingInfo.productionPerSecond} cookies per second</li>
+      <li>• {props.buildingInfo.amount} cursors producing&nbsp;
+        {(props.buildingInfo.amount * props.buildingInfo.productionPerSecond).toFixed(1)}&nbsp;
         cookies per second
       </li>
     </ul>
@@ -26,7 +26,7 @@ const BuildingInfo = props => (
 );
 
 BuildingInfo.propTypes = {
-  producentInfo: PropTypes.object.isRequired,
+  buildingInfo: PropTypes.object.isRequired,
 };
 
 export default BuildingInfo;

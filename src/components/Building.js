@@ -37,7 +37,6 @@ class Building extends React.Component {
       this.props.cookiesAmount < this.state.cost &&
       hiddenButtonClass !== this.state.buttonClass
     ) {
-      // console.log('no');
       this.setState(() => ({
         buttonClass: hiddenButtonClass,
         isShown: false,
@@ -46,7 +45,6 @@ class Building extends React.Component {
       this.props.cookiesAmount >= this.state.cost &&
       hiddenButtonClass === this.state.buttonClass
     ) {
-      // console.log('yes');
       this.setState(() => ({
         buttonClass: 'store_panel__building',
         isShown: true,
@@ -92,12 +90,17 @@ class Building extends React.Component {
     }), () => {
       this.props.buildingBought(this.state.cost, this.state.cookiesPerSecond);
       this.increaseCost();
+      this.getInfoPanel();
     });
   }
 
   increaseCost = () => {
-    this.setState(prevState =>
-      ({ cost: Math.floor(prevState.cost * 1.15) }));
+    const cost = Math.floor(this.state.cost * 1.15);
+    this.setState(() =>
+      ({
+        cost,
+        isShown: cost < this.props.cookiesAmount - cost,
+      }), () => this.getInfoPanel());
   }
 
   render() {

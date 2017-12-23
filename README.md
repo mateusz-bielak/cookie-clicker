@@ -28,6 +28,11 @@ initialCost - set an initial cost in cookies,
 productionPerSecond - set production power for single building,
 ```
 
+You can reset the database by run in the browser console:
+```
+indexedDB.deleteDatabase('cookie-game-database');
+```
+
 ### About project
 
 #### Tests

@@ -19,9 +19,13 @@ class Building extends React.Component {
       const database = event.target.result;
       const request = getFromDatabase(database, props.data.name);
 
-      request.onsuccess = (amount) => {
+      request.onsuccess = (data) => {
+        if (!data.target.result) return;
+        const amount = Number(data.target.result.buildingAmount);
+        const cost = Number(data.target.result.buildingCost);
         this.setState(() => ({
-          amount: Number(amount.target.result) || 0,
+          amount,
+          cost,
         }));
       };
     };
@@ -33,7 +37,6 @@ class Building extends React.Component {
       this.props.cookiesAmount < this.state.cost &&
       hiddenButtonClass !== this.state.buttonClass
     ) {
-      // console.log('no');
       this.setState(() => ({
         buttonClass: hiddenButtonClass,
         isShown: false,
@@ -42,7 +45,6 @@ class Building extends React.Component {
       this.props.cookiesAmount >= this.state.cost &&
       hiddenButtonClass === this.state.buttonClass
     ) {
-      // console.log('yes');
       this.setState(() => ({
         buttonClass: 'store_panel__building',
         isShown: true,
@@ -64,6 +66,24 @@ class Building extends React.Component {
     }));
   }
 
+  getInfoPanel = () => {
+    const {
+      name, description, productionPerSecond,
+    } = this.props.data;
+
+    const stats = {
+      name,
+      amount: this.state.amount,
+      cost: this.state.cost,
+      description,
+      productionPerSecond,
+      areEnoughCookies: this.state.isShown,
+      onHover: true,
+    };
+
+    this.props.getInfoPanel(stats);
+  }
+
   buyBuilding = () => {
     if (this.props.cookiesAmount < this.state.cost) return;
     this.setState(prevState => ({
@@ -71,12 +91,17 @@ class Building extends React.Component {
     }), () => {
       this.props.buildingBought(this.state.cost, this.state.cookiesPerSecond);
       this.increaseCost();
+      this.getInfoPanel();
     });
   }
 
   increaseCost = () => {
-    this.setState(prevState =>
-      ({ cost: Math.floor(prevState.cost * 1.15) }));
+    const cost = Math.floor(this.state.cost * 1.15);
+    this.setState(() =>
+      ({
+        cost,
+        isShown: cost < this.props.cookiesAmount - cost,
+      }), () => this.getInfoPanel());
   }
 
   render() {
@@ -86,6 +111,7 @@ class Building extends React.Component {
         onClick={this.buyBuilding}
         onMouseDown={this.onMouseDown}
         onMouseUp={this.onMouseUp}
+        onMouseEnter={this.getInfoPanel}
       >
         <div>
           <p className="store_panel__building_name">{this.props.data.name}</p>
@@ -107,6 +133,7 @@ Building.propTypes = {
   ])).isRequired,
   cookiesAmount: PropTypes.number.isRequired,
   buildingBought: PropTypes.func.isRequired,
+  getInfoPanel: PropTypes.func.isRequired,
 };
 
 export default Building;

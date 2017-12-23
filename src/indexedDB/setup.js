@@ -5,7 +5,7 @@ export const databaseName = 'cookie-game-database';
 export const databaseVersion = 1;
 export const databaseStoreName = 'user-data';
 
-// indexedDB.deleteDatabase(databaseName);
+indexedDB.deleteDatabase(databaseName);
 
 const openDatabase = indexedDB.open(databaseName, databaseVersion);
 
@@ -41,12 +41,16 @@ setInterval(() => {
       .querySelector('.store_panel__building_amount')
       .textContent;
 
-    return { buildingName, buildingAmount };
+    const buildingCost = building
+      .querySelector('.store_panel__building_cost')
+      .textContent;
+
+    return { buildingName, buildingAmount, buildingCost };
   });
 
   buildingData.forEach((building) => {
-    const { buildingName, buildingAmount } = building;
-    updateDatabase(database, buildingName, buildingAmount);
+    const { buildingName, buildingAmount, buildingCost } = building;
+    updateDatabase(database, buildingName, { buildingAmount, buildingCost });
   });
 
   updateDatabase(database, 'cookies', [cookiesAmount, cookiesPerSecond]);

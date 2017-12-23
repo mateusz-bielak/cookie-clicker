@@ -65,6 +65,7 @@ class Dashboard extends React.Component {
           <StorePanel
             cookiesAmount={this.state.cookiesAmount}
             buildingBought={this.buildingBought}
+            showInfoPanel={this.showInfoPanel}
           />
         </div>
       </div>

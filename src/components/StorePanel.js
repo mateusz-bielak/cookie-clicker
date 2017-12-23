@@ -6,19 +6,19 @@ import buildings from '../settings/buildings';
 
 class StorePanel extends React.Component {
   state = {
-    producentInfo: {},
+    buildingInfo: {},
   }
 
   getInfoPanel = (stats) => {
     this.setState(() => ({
-      producentInfo: stats,
+      buildingInfo: stats,
     }));
   }
 
   hideInfoPanel = () => {
-    const producentInfo = { ...this.state.producentInfo };
-    producentInfo.onHover = false;
-    this.setState({ producentInfo });
+    const buildingInfo = { ...this.state.buildingInfo };
+    buildingInfo.onHover = false;
+    this.setState({ buildingInfo });
   }
 
   render() {
@@ -37,7 +37,7 @@ class StorePanel extends React.Component {
             getInfoPanel={this.getInfoPanel}
           />)) }
         </div>
-        <BuildingInfo producentInfo={this.state.producentInfo} />
+        <BuildingInfo buildingInfo={this.state.buildingInfo} />
       </div>
     );
   }

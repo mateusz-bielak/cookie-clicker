@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Building from '../../components/Building';
 import buildings from '../../settings/buildings';
-import stats from '../fixtures/producentStats';
+import stats from '../fixtures/buildingStats';
 
 let buildingBought;
 let data;
@@ -43,7 +43,7 @@ test('should not buy building', () => {
     .toHaveBeenCalled();
 });
 
-test('should send producent stats', () => {
+test('should send building stats', () => {
   wrapper.setState({ amount: 12 });
   wrapper.setProps({ cookiesAmount: 10 });
   wrapper.find('button').simulate('mouseEnter');

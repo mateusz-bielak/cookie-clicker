@@ -1,6 +1,6 @@
 # Cookie Clicker - demo version of *Orteil Dashnet* game
 
-https://butseriously.github.io/cookie-clicker - click to see live.
+https://mateusz-bielak.github.io/cookie-clicker/ - click to see live.
 
 http://orteil.dashnet.org/cookieclicker - click to see original game.
 
